@@ -4,7 +4,9 @@ const Router = require('koa-router');
 const R = require('ramda')
 
 const app = new Koa();
+const cors = require('@koa/cors');
 app.use(require('koa-bodyparser')())
+app.use(cors());
 
 const router = new Router();
 const knex = require('./effect/knex')
